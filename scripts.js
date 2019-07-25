@@ -16,27 +16,6 @@ For example, if N is 4, then there are 5 unique ways:
 What if, instead of being able to climb 1 or 2 steps at a time, you could climb any number from a set of positive integers X? For example, if X = {1, 3, 5}, you could climb 1, 3, or 5 steps at a time.
 */
 
-/* find the pattern in this stair case problem:
-
-steps | ways to climb:
-if n is the term?
-1 - (1)
-2 - (1,1), (2)
-3 - (1,1,1), (2,1), (1,2)
-4 - (1,1,1,1), (2,1,1), (1,2,1), (1,1,2), (2,2)
-5 - (1,1,1,1,1), (2,1,1,1), (1,2,1,1), (1,1,2,1), (1,1,1,2), (2,2,1), (1,2,2), (2,1,2)
-6 - (1,1,1,1,1,1), (2,1,1,1,1), (1,2,1,1,1), (1,1,2,1,1), (1,1,1,2,1), (1,1,1,1,2), (2,2,1,1), (1,2,2,1), (1,2,1,2), (1,1,2,2), (2,1,2,1), (2,1,1,2), (2,2,2)
-
-n:
-1,2,3,4,5,6
-
-function(n):
-1,2,3,5,8,13
-
-This is a fibinacci sequence, with different starting numbers
-
-*/
-
 const fib = (n) => {
   if (n===0) {return 0}
   if (n===1) {return 1}
@@ -52,6 +31,11 @@ const fib = (n) => {
 }
 
 $(document).ready(function() {
-  $('#output-section-1').text(1);
-  $('#output-section-2').text(2);
+  $("#form1").submit(function(event) {
+    event.preventDefault();
+    let number = $("#input1").val();
+    let final = fib(number);
+    $('#output-section-1').text(number);
+    $('#output-section-2').text(final);
+  });
 });

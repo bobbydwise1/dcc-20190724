@@ -100,7 +100,14 @@
       </tr>
     </table>
     <br>
-    <p> = <span id="output-section-1"></span></p>
-    <p> = <span id="output-section-2"></span></p>
+    <p>Note that f(1) = 1, f(2) = 2, and f(n) = f(n-1) + f(n-2)</p>
+    <br>
+    <form id='form1'>
+      Type a number:
+      <input id='input1' name='someText' type='number' placeholder='integer please' required minlength='1' pattern='[\d]{1,}'>
+      <button type='submit' name='button'>Submit</button>
+    </form>
+    <p>Your term = <span id="output-section-1"></span></p>
+    <p>Total Sequences = <span id="output-section-2"></span></p>
   </body>
 </html>
